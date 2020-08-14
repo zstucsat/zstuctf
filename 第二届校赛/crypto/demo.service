@@ -1,0 +1,11 @@
+[Unit]
+Description=fenzumoshi
+
+[Service]
+ExecStart=/bin/bash -c "/usr/bin/python3.8 /home/ubuntu/challenges/fenzumoshi/cbcofb.py" 
+Restart=always
+User=ubuntu
+StandardOutput=syslog
+StandardError=syslog
+[Install]
+WantedBy=multi-user.target

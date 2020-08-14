@@ -1,0 +1,3 @@
+网址：http://ctf.qiuyitech.com/xss1
+题目来源：
+https://github.com/vvMelody/CTF-Web-Challenges/tree/master/XSS/34c3-2017-urlstorage

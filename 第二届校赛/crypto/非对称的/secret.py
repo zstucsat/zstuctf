@@ -1,0 +1,1 @@
+flag=b'zstuctf{7h3_s1mplest}'

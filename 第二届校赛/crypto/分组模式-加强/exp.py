@@ -1,0 +1,20 @@
+from pwn import*
+def byte_xor(ba1, ba2):
+	return bytes([_a ^ _b for _a, _b in zip(ba1, ba2)])
+p = remote('68.79.17.14',10002)
+p.sendafter("choice?","1")
+p.recvuntil("256-cfb:\n")
+c=p.recv(58)
+c=bytes.fromhex(c.decode())
+p.sendafter("choice?","2")
+p.sendlineafter("encrypt\n> ",'0'*32)
+c1=p.recv(32)
+c1=bytes.fromhex(c1.decode())
+m1=byte_xor(c1,c[0:16])
+p.sendafter("choice?","2")
+p.sendlineafter("encrypt\n> ",'0'*32+m1.hex())
+c2=p.recv(64)
+c2=bytes.fromhex(c2.decode())
+c2=c2[16:32]
+m2=byte_xor(c2,c[16:32])
+print((m1+m2).decode())

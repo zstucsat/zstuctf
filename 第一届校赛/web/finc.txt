@@ -1,0 +1,2 @@
+http://ctf.qiuyitech.com/finc
+À´Ô´£ºhttps://github.com/vvMelody/CTF-Web-Challenges/tree/master/File-Inclusion/XCTF-Final-2018-Bestphp

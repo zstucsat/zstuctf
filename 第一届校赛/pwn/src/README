@@ -1,0 +1,13 @@
+在当前目录按以下方式创建环境
+1.修改题目bin目录下的flag内容
+2.运行以下命令，port1和port2替换为你想映射到的本机端口
+说明：ctf为基础镜像，必须先build完成
+
+cd base
+sudo docker build -t "ctf" .
+cd ../b64encode
+sudo docker build -t "b64encode" .
+cd ../truth
+sudo docker build -t "truth" .
+sudo docker run -d -p "0.0.0.0:port1:9999" -h "b64encode" --name="b64encode" b64encode
+sudo docker run -d -p "0.0.0.0:port2:9999" -h "truth" --name="truth" truth

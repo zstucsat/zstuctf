@@ -1,0 +1,1 @@
+flag = b"zstuctf{2hanc3d_B10ck_c1ph3r}"
